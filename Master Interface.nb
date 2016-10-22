@@ -1,0 +1,275 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9745,        266]
+NotebookOptionsPosition[      8413,        215]
+NotebookOutlinePosition[      8757,        230]
+CellTagsIndexPosition[      8714,        227]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "masterFunctions.wl"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "misorientation.wl"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "Kent_sp.wl"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"ParentDirectory", "[", "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"meapFiles", " ", "=", " ", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<*.meap\>\"", ",", " ", "\"\<*\>\"", ",", " ", "Infinity"}], 
+    "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.636486218460007*^9, 3.6364862506488485`*^9}, {
+  3.6364864112640347`*^9, 3.6364864220776534`*^9}, {3.636670111588502*^9, 
+  3.6366701172568254`*^9}, {3.636675442097226*^9, 3.6366754448083816`*^9}, {
+  3.6378605432353053`*^9, 3.637860543354312*^9}, {3.6380455044185376`*^9, 
+  3.6380455200514317`*^9}, {3.638401050740658*^9, 3.6384010510626764`*^9}, {
+  3.6393230884052086`*^9, 3.6393230915063868`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Press buttons below to regenerate a new meap file for a ctf file - note that \
+large files can take several minutes\
+\>", "Subsection",
+ CellChangeTimes->{{3.6380623829736085`*^9, 3.6380624025897303`*^9}, {
+  3.638398263221449*^9, 3.638398271597928*^9}, {3.6468332379827895`*^9, 
+  3.6468332453172092`*^9}}],
+
+Cell[BoxData["meapCreator"], "Input",
+ CellChangeTimes->{{3.6380106745717487`*^9, 3.638010704399455*^9}, {
+   3.6380110839309454`*^9, 3.638011085851055*^9}, {3.638012933789751*^9, 
+   3.638012934172773*^9}, {3.6380145865793314`*^9, 3.6380145875493865`*^9}, {
+   3.638017318743602*^9, 3.6380173195596485`*^9}, {3.638062270439172*^9, 
+   3.63806237793332*^9}, {3.638063252753357*^9, 3.6380632913345633`*^9}, 
+   3.639511300216522*^9, {3.6395113477382402`*^9, 3.639511349290329*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Pole figure creator", "Subsection",
+ CellChangeTimes->{{3.6395110856612506`*^9, 3.639511090098504*^9}}],
+
+Cell[BoxData[
+ RowBox[{"pfCreator", "[", "meapFiles", "]"}]], "Input",
+ CellChangeTimes->{{3.6384108275594015`*^9, 3.638410831351618*^9}, {
+  3.6388083426790547`*^9, 3.6388083673904686`*^9}, {3.638808467703206*^9, 
+  3.63880846916529*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Map creator", "Subsection",
+ CellChangeTimes->{{3.6395110935977044`*^9, 3.6395110950727887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mapCreator", "[", "meapFiles", "]"}]], "Input",
+ CellChangeTimes->{{3.636486440585712*^9, 3.6364864643370705`*^9}, {
+   3.636486583200869*^9, 3.636486680027407*^9}, {3.636486750992466*^9, 
+   3.636486767908434*^9}, {3.6366665861382093`*^9, 3.636666747209893*^9}, {
+   3.636668798649516*^9, 3.6366688593188376`*^9}, {3.636668891291294*^9, 
+   3.636669010100909*^9}, {3.636670215253431*^9, 3.636670241357924*^9}, {
+   3.636670384233096*^9, 3.6366704046332626`*^9}, {3.636670482948742*^9, 
+   3.636670494592408*^9}, {3.636670638481638*^9, 3.6366706978800354`*^9}, 
+   3.6366755938269053`*^9, {3.636675963482048*^9, 3.6366759664632187`*^9}, {
+   3.636677402356347*^9, 3.636677418059245*^9}, {3.6366777962358756`*^9, 
+   3.636677796814909*^9}, {3.6380208346787024`*^9, 3.638020842175131*^9}, 
+   3.638060144863596*^9, {3.638401048428526*^9, 3.6384010493965807`*^9}, 
+   3.638887933019034*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generate misorientation angle overlay", "Subsection",
+ CellChangeTimes->{{3.638398293925205*^9, 3.6383982987894835`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"overlayCreator", "[", "meapFiles", "]"}]], "Input",
+ CellChangeTimes->{{3.637860087331229*^9, 3.637860135640992*^9}, {
+   3.6378610265829515`*^9, 3.6378610298551383`*^9}, {3.637861247015559*^9, 
+   3.637861259629281*^9}, 3.637867058428953*^9, {3.63786713494833*^9, 
+   3.6378672784825397`*^9}, {3.6378689652960196`*^9, 3.63786896879422*^9}, 
+   3.637977796373886*^9, {3.6379801032608323`*^9, 3.6379801262541475`*^9}, {
+   3.638062480821205*^9, 3.638062775303048*^9}, {3.638062814199273*^9, 
+   3.6380628598388834`*^9}, {3.6380630221261663`*^9, 
+   3.6380630620414486`*^9}, {3.6380638024727993`*^9, 3.6380638178726797`*^9}, 
+   3.638893915142192*^9, {3.6388939825780487`*^9, 3.6388939839491277`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Play with EBSD data (under variable name \[OpenCurlyDoubleQuote]data\
+\[CloseCurlyDoubleQuote])", "Subsection",
+ CellChangeTimes->{{3.638382156684944*^9, 3.6383821634183297`*^9}, {
+  3.6383980237987547`*^9, 3.6383980354394207`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataPlay", "[", "meapFiles", "]"}]], "Input",
+ CellChangeTimes->{{3.6383821720258217`*^9, 3.6383822268339567`*^9}, {
+   3.638383399849191*^9, 3.63838340069824*^9}, {3.638383454123296*^9, 
+   3.6383834630528064`*^9}, 3.639511207772235*^9, {3.639511362208068*^9, 
+   3.6395113927608156`*^9}, {3.639619592954355*^9, 3.6396195945454454`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bulk Kent distributions of EBSD data", "Subsection",
+ CellChangeTimes->{{3.6384857014908943`*^9, 3.63848570562613*^9}, {
+  3.6396017938260345`*^9, 3.639601798920326*^9}}],
+
+Cell[BoxData["EBSDBulkCreator"], "Input",
+ CellChangeTimes->{{3.638481941679845*^9, 3.6384819457790794`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"kentBulk", "[", 
+   RowBox[{
+   "meapFiles", ",", " ", "onlyArag", ",", " ", "onlyLens", ",", " ", "clean",
+     ",", " ", "xVal", ",", " ", "yVal", ",", " ", "zVal", ",", " ", 
+    "critSize", ",", " ", "grain"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6383989632364874`*^9, 3.6383990009156427`*^9}, {
+   3.6384079496807957`*^9, 3.6384079566671953`*^9}, {3.6384080606091404`*^9, 
+   3.638408113837185*^9}, {3.6384084218058*^9, 3.638408437604704*^9}, {
+   3.638408528583907*^9, 3.6384085304400134`*^9}, 3.6384088165803795`*^9, {
+   3.6384088490632377`*^9, 3.6384088791309576`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plot deviation", "Subsection",
+ CellChangeTimes->{{3.6395110774847827`*^9, 3.639511080877977*^9}}],
+
+Cell[BoxData[
+ RowBox[{"plotDevCreator", "[", "meapFiles", "]"}]], "Input",
+ CellChangeTimes->{{3.639184361023409*^9, 3.639184370671961*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bulk deviation plots", "Subsection",
+ CellChangeTimes->{{3.639597668875101*^9, 3.639597674867444*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"plotDevMeap", "[", 
+      RowBox[{
+       RowBox[{"meapFiles", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", " ", "21", ",", " ", 
+       "1", ",", "False", ",", " ", "False", ",", " ", "True", ",", " ", 
+       "1"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", 
+     RowBox[{"Length", "[", "meapFiles", "]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6395854874547586`*^9, 3.639585512918215*^9}, {
+  3.639597545127023*^9, 3.6395975453610363`*^9}, {3.6395976781666327`*^9, 
+  3.639597724367275*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Import new lens subset", "Subsection",
+ CellChangeTimes->{{3.639511104134307*^9, 3.639511109196597*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{"Partition", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Button", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FileNameSplit", "[", "#", "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"-", "3"}], "]"}], "]"}], ",", " ", 
+        RowBox[{"importLensSubset", "[", "#", "]"}]}], "]"}], "&"}], "/@", 
+     "meapFiles"}], ",", "5"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6393249769522276`*^9, 3.6393249797103853`*^9}, {
+  3.6395110246427603`*^9, 3.6395110679522376`*^9}, {3.639511144309605*^9, 
+  3.6395111984006987`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1366, 695},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1137, 25, 132, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1720, 49, 317, 6, 49, "Subsection"],
+Cell[2040, 57, 480, 6, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2557, 68, 109, 1, 49, "Subsection"],
+Cell[2669, 71, 239, 4, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2945, 80, 103, 1, 49, "Subsection"],
+Cell[3051, 83, 911, 13, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3999, 101, 127, 1, 49, "Subsection"],
+Cell[4129, 104, 723, 10, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4889, 119, 238, 3, 49, "Subsection"],
+Cell[5130, 124, 362, 5, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5529, 134, 176, 2, 49, "Subsection"],
+Cell[5708, 138, 109, 1, 31, "Input"],
+Cell[5820, 141, 623, 11, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6480, 157, 104, 1, 49, "Subsection"],
+Cell[6587, 160, 141, 2, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6765, 167, 108, 1, 49, "Subsection"],
+Cell[6876, 170, 763, 18, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7676, 193, 110, 1, 49, "Subsection"],
+Cell[7789, 196, 608, 16, 31, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
